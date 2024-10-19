@@ -1,7 +1,11 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
-      <footer>
-          <p>Footer content goes here.</p>
-      </footer>
+    <footer>
+      <div>
+        <Link href="/">フッターだお</Link>
+      </div>
+    </footer>
   );
 }
