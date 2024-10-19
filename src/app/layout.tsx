@@ -56,7 +56,7 @@ export default function RootLayout({
     <html lang="ja" className={notoSansJP.className}>
       <body className={styles.wrapper}>
         <Header />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
