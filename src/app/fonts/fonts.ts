@@ -1,17 +1,18 @@
-import {Inter, Roboto_Mono, Noto_Sans_JP} from 'next/font/google'
+import { Inter, Roboto_Mono, Noto_Sans_JP } from "next/font/google";
 
+//Googleフォント
 export const inter = Inter({
-  subsets: ['latin'],
+  subsets: ["latin"],
   display: "swap",
-})
+});
 
 export const roboto_mono = Roboto_Mono({
-  subsets:['latin'],
+  subsets: ["latin"],
   display: "swap",
-})
+});
 
 export const notoSansJP = Noto_Sans_JP({
-  weight: ['400','700'],
+  weight: ["400", "700"],
   style: "normal",
-  subsets: ["latin"]
-})
+  subsets: ["latin"],
+});

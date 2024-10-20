@@ -7,19 +7,6 @@ import { notoSansJP } from "./fonts/fonts";
 import Header from "./components/layout/header/page";
 import Footer from "./components/layout/footer/page";
 
-// const geistSans = localFont({
-//   src: "./public/fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./public/fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
-
-//Googleフォント
-
 //Meta情報
 export const metadata: Metadata = {
   title: "ポイントサイト",
