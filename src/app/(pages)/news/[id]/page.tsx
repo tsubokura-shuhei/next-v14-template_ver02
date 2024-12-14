@@ -1,11 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
 
-// type Props = {
-//     params: {id: string}
-//     searchParams: {[key: string | string | string[] | undefined]}
-// }
-
 interface Post {
   userId: number;
   id: number;
@@ -14,17 +9,18 @@ interface Post {
 }
 
 // generateStaticParamsを追加
-export const generateStaticParams = async () => {
+export const generateStaticParams = async (): Promise<{ id: string }[]> => {
   try {
     const res = await fetch("https://jsonplaceholder.typicode.com/posts");
     const posts: Post[] = await res.json();
 
     return posts.map((post) => ({
       id: post.id.toString(),
-      title: post.title,
     }));
   } catch (error) {
     console.error("データの取得に失敗しました", error);
+    // 空配列を返す
+    return [];
   }
 };
 
@@ -33,7 +29,7 @@ export const generateMetadata = async ({
   params,
 }: {
   params: { id: string };
-}): Promise<Metadata> => {
+}): Promise<Metadata | undefined> => {
   const res = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${params.id}`
   );
@@ -49,12 +45,11 @@ export const generateMetadata = async ({
 export default function NewsPage({
   params,
 }: {
-  params: { id: string; title: string };
+  params: { id: string };
 }) {
   return (
     <div>
       <h1>ニュース：{params.id}</h1>
-      <p>{params.title}</p>
     </div>
   );
 }

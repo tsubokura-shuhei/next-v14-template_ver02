@@ -4,7 +4,7 @@ import "@/app/styles/globals.css";
 import styles from "./styles/main.module.scss";
 
 import { notoSansJP } from "./fonts/fonts";
-// import Header from "./components/layout/header/page";
+import Header from "./components/layout/header/page";
 // import Footer from "./components/layout/footer/page";
 
 //Meta情報
@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className={notoSansJP.className}>
       <body className={styles.wrapper}>
-        {/* <Header /> */}
+        <Header />
         <main>{children}</main>
         {/* <Footer /> */}
       </body>
